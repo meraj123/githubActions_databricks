@@ -26,6 +26,6 @@ jobs:
           DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
           DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
       run: |
-          echo "[DEFAULT]" > ~/.databrickscfg
-          echo "host = $DATABRICKS_HOST" >> ~/.databrickscfg
-          echo "token = $DATABRICKS_TOKEN" >> ~/.databrickscfg
+          echo "[DEFAULT]" 
+          echo "host = $DATABRICKS_HOST" 
+          echo "token = $DATABRICKS_TOKEN" 
