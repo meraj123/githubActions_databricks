@@ -21,9 +21,9 @@ jobs:
     - name: Install Databricks CLI
       run: pip install databricks-cli
 
-    - name: Run Databricks Job
+    - name: Set up Databricks connection
       env:
-        DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
-        DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
+          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
       run: |
-        databricks jobs run-now --job-id 596850916126777 --notebook-params "param1=value1,param2=value2"
+          databricks configure --host "$DATABRICKS_HOST" --token "$DATABRICKS_TOKEN"
